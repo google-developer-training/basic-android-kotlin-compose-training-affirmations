@@ -1,7 +1,13 @@
-Affirmations App - Starter Code
+Affirmations App - Solution Code
 ================================
 
-Starter code for the Android Basics in Compose: Affirmations app.
+Solution code for the Android Basics with Compose: Affirmations app.
+
+
+Introduction
+------------
+The Affirmations app contains a scrollable list of 10 cards.
+
 
 Pre-requisites
 --------------
@@ -16,3 +22,5 @@ Getting Started
 2. Download the sample.
 3. Import the sample into Android Studio.
 4. Build and run the sample.
+
+All photos by Romain Guy. All photos are licensed under CC0 https://creativecommons.org/share-your-work/public-domain/cc0/
