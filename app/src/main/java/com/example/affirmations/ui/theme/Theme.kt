@@ -70,7 +70,6 @@ fun AffirmationsTheme(
 
     MaterialTheme(
         colorScheme = colorScheme,
-        typography = Typography,
         content = content
     )
 }

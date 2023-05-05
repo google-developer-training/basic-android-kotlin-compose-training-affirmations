@@ -45,10 +45,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            AffirmationsTheme {
-                // A surface container using the 'background' color from the theme
-                AffirmationApp()
-            }
+            AffirmationApp()
         }
     }
 }
@@ -56,15 +53,15 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun AffirmationApp() {
     AffirmationsTheme {
-            AffirmationList(
-                affirmationList = Datasource().loadAffirmations(),
-            )
+        AffirmationList(
+            affirmationList = Datasource().loadAffirmations(),
+        )
     }
 }
 
 @Composable
 fun AffirmationList(affirmationList: List<Affirmation>, modifier: Modifier = Modifier) {
-    LazyColumn {
+    LazyColumn(modifier = modifier) {
         items(affirmationList) { affirmation ->
             AffirmationCard(
                 affirmation = affirmation,
