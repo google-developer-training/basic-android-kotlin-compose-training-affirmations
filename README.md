@@ -1,7 +1,7 @@
-Affirmations App - Intermediate Code
+Affirmations App - Starter Code
 ================================
 
-Intermediate code for the Android Basics with Compose: Affirmations app.
+Starter code for the Android Basics with Compose: Affirmations app.
 
 
 Introduction
