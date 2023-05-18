@@ -1,11 +1,11 @@
 /*
- * Copyright (C) 2021 The Android Open Source Project
+ * Copyright (C) 2023 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -17,7 +17,10 @@ package com.example.affirmations.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Purple200 = Color(0xFFBB86FC)
-val Purple500 = Color(0xFF6200EE)
-val Purple700 = Color(0xFF3700B3)
-val Teal200 = Color(0xFF03DAC5)
+val md_theme_light_background = Color(0xFFFBFCFE)
+val md_theme_light_surfaceVariant = Color(0xFFE7E0EC)
+val md_theme_light_onSurfaceVariant = Color(0xFF49454f)
+
+val md_theme_dark_background = Color(0xFF191C1D)
+val md_theme_dark_surfaceVariant = Color(0xFF49454f)
+val md_theme_dark_onSurfaceVariant = Color(0xFFCAC4D0)
