@@ -28,4 +28,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "Affirmations"
-include ':app'
+include(":app")
