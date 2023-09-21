@@ -53,14 +53,11 @@ import com.example.affirmations.ui.theme.AffirmationsTheme
 class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        super.onCreate(savedInstanceState)
         setContent {
             AffirmationsTheme {
-                Surface(
-                    modifier = Modifier
-                        .fillMaxSize()
-                ) {
+                Surface(modifier = Modifier.fillMaxSize()) {
                     AffirmationsApp()
                 }
             }
