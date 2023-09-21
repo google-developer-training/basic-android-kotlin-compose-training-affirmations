@@ -55,18 +55,9 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             AffirmationsTheme {
-                val layoutDirection = LocalLayoutDirection.current
-                // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier
                         .fillMaxSize()
-                        .statusBarsPadding()
-                        .padding(
-                            start = WindowInsets.safeDrawing.asPaddingValues()
-                                .calculateStartPadding(layoutDirection),
-                            end = WindowInsets.safeDrawing.asPaddingValues()
-                                .calculateEndPadding(layoutDirection)
-                        ),
                 ) {
                     AffirmationsApp()
                 }
@@ -77,9 +68,22 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun AffirmationsApp() {
-    AffirmationList(
-        affirmationList = Datasource().loadAffirmations(),
-    )
+    val layoutDirection = LocalLayoutDirection.current
+    Surface(
+        modifier = Modifier
+            .fillMaxSize()
+            .statusBarsPadding()
+            .padding(
+                start = WindowInsets.safeDrawing.asPaddingValues()
+                    .calculateStartPadding(layoutDirection),
+                end = WindowInsets.safeDrawing.asPaddingValues()
+                    .calculateEndPadding(layoutDirection)
+            ),
+    ) {
+        AffirmationList(
+            affirmationList = Datasource().loadAffirmations(),
+        )
+    }
 }
 
 @Composable
