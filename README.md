@@ -1,26 +1,11 @@
-Affirmations App - Solution Code
+Creating lists Kotlin 
 ================================
 
-Solution code for the Android Basics with Compose: Affirmations app.
+This is part of the exercise 2.13 of the PDM subject 
 
+Here is where the commmits, pushes and pulll requests are going to be published
 
-Introduction
-------------
-The Affirmations app contains a scrollable list of 10 cards.
-
-
-Pre-requisites
---------------
-* Familiarity with Lists in Kotlin
-* Experience building layouts with Jetpack Compose
-* Experience running apps on a device or emulator
-
-
-Getting Started
----------------
-1. Install Android Studio, if you don't already have it.
-2. Download the sample.
-3. Import the sample into Android Studio.
-4. Build and run the sample.
-
-All photos by Romain Guy. All photos are licensed under CC0 https://creativecommons.org/share-your-work/public-domain/cc0/
+#Notes: 
+* This is a fork from the original repo (Google's domain)
+* Tnis repo is only for create the changes in the app and demonstrate te implementation
+* I'm planned to publish unitary tests
