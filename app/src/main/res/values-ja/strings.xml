@@ -44,4 +44,42 @@
     <string name="act4_pause">一時停止</string>
     <string name="act4_reset">リセット</string>
     <string name="btn_back">MainActivityへ戻る</string>
+
+    <!-- 実験4：カード合わせゲーム -->
+    <string name="title_person_info">プロフィール編集</string>
+    <string name="title_card_game">カードゲーム</string>
+    <string name="label_avatar">アバター</string>
+    <string name="label_gender">性別：</string>
+    <string name="label_hobby">趣味：</string>
+    <string name="row_name">名前：%1$s</string>
+    <string name="row_gender">性別：%1$s</string>
+    <string name="row_student_id">学籍番号：%1$s</string>
+    <string name="row_phone">電話：%1$s</string>
+    <string name="row_email">メール：%1$s</string>
+    <string name="row_hobby">趣味：%1$s</string>
+    <string name="row_high_score">ハイスコア：%1$d</string>
+    <string name="btn_edit_info">プロフィール編集</string>
+    <string name="btn_play_game">カードゲーム</string>
+    <string name="hint_name">名前</string>
+    <string name="hint_student_id">学籍番号</string>
+    <string name="hint_phone">電話番号</string>
+    <string name="hint_email">メールアドレス</string>
+    <string name="gender_male">男</string>
+    <string name="gender_female">女</string>
+    <string name="hobby_travel">旅行</string>
+    <string name="hobby_reading">読書</string>
+    <string name="hobby_game">ゲーム</string>
+    <string name="hobby_shopping">ショッピング</string>
+    <string name="btn_save">保存</string>
+    <string name="btn_cancel">キャンセル</string>
+    <string name="game_score">スコア：%1$d</string>
+    <string name="btn_reset">リスタート</string>
+    <string name="btn_exit">終了</string>
+    <string name="card_back">?</string>
+    <string name="game_win">おめでとうございます！全て一致！スコア：%1$d</string>
+    <string name="default_name">喬于恬</string>
+    <string name="default_gender">女</string>
+    <string name="default_student_id">2024050133</string>
+    <string name="default_phone">13800000000</string>
+    <string name="default_email">qiaoyutian@example.com</string>
 </resources>

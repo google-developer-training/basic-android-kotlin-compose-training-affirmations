@@ -17,24 +17,17 @@
         tools:targetApi="33">
         <activity
             android:name=".MainActivity"
-            android:exported="true"
-            android:theme="@style/Theme.Affirmations">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".FirstActivity"
+            android:name=".PersonInfoActivity"
             android:exported="false" />
         <activity
-            android:name=".SecondActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ThirdActivity"
-            android:exported="false" />
-        <activity
-            android:name=".FourthActivity"
+            android:name=".CardGameActivity"
             android:exported="false" />
     </application>
 

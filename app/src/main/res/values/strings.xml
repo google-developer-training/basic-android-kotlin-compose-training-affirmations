@@ -46,4 +46,42 @@
     <string name="act4_pause">暂停</string>
     <string name="act4_reset">重置</string>
     <string name="btn_back">返回MainActivity</string>
+
+    <!-- 实验四：翻牌游戏 -->
+    <string name="title_person_info">信息修改</string>
+    <string name="title_card_game">翻牌游戏</string>
+    <string name="label_avatar">头像</string>
+    <string name="label_gender">性别：</string>
+    <string name="label_hobby">爱好：</string>
+    <string name="row_name">姓名：%1$s</string>
+    <string name="row_gender">性别：%1$s</string>
+    <string name="row_student_id">学号：%1$s</string>
+    <string name="row_phone">电话：%1$s</string>
+    <string name="row_email">邮件地址：%1$s</string>
+    <string name="row_hobby">爱好：%1$s</string>
+    <string name="row_high_score">游戏最高分：%1$d</string>
+    <string name="btn_edit_info">修改个人信息</string>
+    <string name="btn_play_game">翻牌游戏</string>
+    <string name="hint_name">姓名</string>
+    <string name="hint_student_id">学号</string>
+    <string name="hint_phone">电话号码</string>
+    <string name="hint_email">电子邮件地址</string>
+    <string name="gender_male">男</string>
+    <string name="gender_female">女</string>
+    <string name="hobby_travel">旅游</string>
+    <string name="hobby_reading">阅读</string>
+    <string name="hobby_game">游戏</string>
+    <string name="hobby_shopping">购物</string>
+    <string name="btn_save">保存</string>
+    <string name="btn_cancel">取消</string>
+    <string name="game_score">得分：%1$d</string>
+    <string name="btn_reset">重置游戏</string>
+    <string name="btn_exit">退出</string>
+    <string name="card_back">?</string>
+    <string name="game_win">恭喜！全部配对完成！得分：%1$d</string>
+    <string name="default_name">乔于恬</string>
+    <string name="default_gender">女</string>
+    <string name="default_student_id">2024050133</string>
+    <string name="default_phone">13800000000</string>
+    <string name="default_email">qiaoyutian@example.com</string>
 </resources>

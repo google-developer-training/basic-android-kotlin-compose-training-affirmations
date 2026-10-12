@@ -44,4 +44,42 @@
     <string name="act4_pause">Pause</string>
     <string name="act4_reset">Reset</string>
     <string name="btn_back">Back to MainActivity</string>
+
+    <!-- Experiment 4: Card Matching Game -->
+    <string name="title_person_info">Edit Profile</string>
+    <string name="title_card_game">Card Game</string>
+    <string name="label_avatar">Avatar</string>
+    <string name="label_gender">Gender: </string>
+    <string name="label_hobby">Hobbies: </string>
+    <string name="row_name">Name: %1$s</string>
+    <string name="row_gender">Gender: %1$s</string>
+    <string name="row_student_id">Student ID: %1$s</string>
+    <string name="row_phone">Phone: %1$s</string>
+    <string name="row_email">Email: %1$s</string>
+    <string name="row_hobby">Hobbies: %1$s</string>
+    <string name="row_high_score">High Score: %1$d</string>
+    <string name="btn_edit_info">Edit Profile</string>
+    <string name="btn_play_game">Card Game</string>
+    <string name="hint_name">Name</string>
+    <string name="hint_student_id">Student ID</string>
+    <string name="hint_phone">Phone number</string>
+    <string name="hint_email">Email address</string>
+    <string name="gender_male">Male</string>
+    <string name="gender_female">Female</string>
+    <string name="hobby_travel">Travel</string>
+    <string name="hobby_reading">Reading</string>
+    <string name="hobby_game">Gaming</string>
+    <string name="hobby_shopping">Shopping</string>
+    <string name="btn_save">Save</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="game_score">Score: %1$d</string>
+    <string name="btn_reset">Restart</string>
+    <string name="btn_exit">Exit</string>
+    <string name="card_back">?</string>
+    <string name="game_win">Congratulations! All matched! Score: %1$d</string>
+    <string name="default_name">Qiao Yutian</string>
+    <string name="default_gender">Female</string>
+    <string name="default_student_id">2024050133</string>
+    <string name="default_phone">13800000000</string>
+    <string name="default_email">qiaoyutian@example.com</string>
 </resources>
