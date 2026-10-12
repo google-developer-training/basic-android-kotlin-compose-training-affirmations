@@ -17,4 +17,31 @@
     <string name="advice_ai">人工知能：機械学習・深層学習と数学が中心。線形代数と確率統計を固め、コンペに参加しましょう。</string>
     <string name="advice_ds">データ科学：クレンジング・統計分析・可視化が中心。SQL と Python を習得しましょう。</string>
     <string name="advice_net">ネットワーク工学：ネットワーク・ルーティング・セキュリティが中心。実験を重ね、クラウド動向を追いましょう。</string>
+
+    <!-- 実験3：マルチActivity -->
+    <string name="main_title">実験3：マルチActivity</string>
+    <string name="btn_open_act1">1. サブActivityを起動（値渡し）</string>
+    <string name="btn_open_act2">2. サブActivityを起動（結果返却）</string>
+    <string name="btn_open_act3">3. サブActivityを起動（暗黙インテントでカメラ）</string>
+    <string name="btn_open_act4">4. サブActivityを起動（ストップウォッチ）</string>
+    <string name="forward_payload">こんにちは。MainActivityからIntentで正向きに渡されたデータです：喬于恬（2024050133）。</string>
+    <string name="back_result_label">サブActivity2から返ってきた結果：%1$s</string>
+    <string name="back_result_empty">サブActivity2から返されたデータはここに表示されます。</string>
+
+    <string name="act1_title">サブActivity 1：値を受信</string>
+    <string name="act1_received_label">MainActivityからIntentで受け取ったパラメータ：\n\n%1$s</string>
+
+    <string name="act2_title">サブActivity 2：結果を返す</string>
+    <string name="act2_hint">MainActivityへ返す内容を入力してください</string>
+    <string name="act2_confirm">確定して戻る</string>
+
+    <string name="act3_title">サブActivity 3：システムカメラ</string>
+    <string name="act3_take_photo">カメラで撮影</string>
+    <string name="act3_no_camera">利用可能なカメラアプリが見つかりません</string>
+
+    <string name="act4_title">サブActivity 4：ストップウォッチ</string>
+    <string name="act4_start">スタート</string>
+    <string name="act4_pause">一時停止</string>
+    <string name="act4_reset">リセット</string>
+    <string name="btn_back">MainActivityへ戻る</string>
 </resources>
