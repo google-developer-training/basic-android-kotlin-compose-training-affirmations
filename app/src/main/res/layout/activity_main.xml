@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <ImageView
+            android:id="@+id/avatarView"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:background="#EEEEEE"
+            android:contentDescription="@string/label_avatar"
+            android:src="@android:drawable/ic_menu_myplaces" />
+
+        <TextView
+            android:id="@+id/nameRow"
+            style="@style/InfoRow" />
+        <TextView
+            android:id="@+id/genderRow"
+            style="@style/InfoRow" />
+        <TextView
+            android:id="@+id/studentIdRow"
+            style="@style/InfoRow" />
+        <TextView
+            android:id="@+id/phoneRow"
+            style="@style/InfoRow" />
+        <TextView
+            android:id="@+id/emailRow"
+            style="@style/InfoRow" />
+        <TextView
+            android:id="@+id/hobbyRow"
+            style="@style/InfoRow" />
+        <TextView
+            android:id="@+id/highScoreRow"
+            style="@style/InfoRow"
+            android:layout_marginBottom="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <Button
+                android:id="@+id/btnEditInfo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:text="@string/btn_edit_info" />
+
+            <Button
+                android:id="@+id/btnPlayGame"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="@string/btn_play_game" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

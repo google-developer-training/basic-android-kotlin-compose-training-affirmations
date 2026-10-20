@@ -1,107 +1,108 @@
-/*
- * Copyright (C) 2023 The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      https://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package com.example.affirmations
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
-import androidx.compose.material3.Card
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
-import com.example.affirmations.data.Datasource
-import com.example.affirmations.model.Affirmation
-import com.example.affirmations.ui.theme.AffirmationsTheme
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.TextView
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 
-class MainActivity : ComponentActivity() {
+class MainActivity : AppCompatActivity() {
+
+    private lateinit var nameRow: TextView
+    private lateinit var genderRow: TextView
+    private lateinit var studentIdRow: TextView
+    private lateinit var phoneRow: TextView
+    private lateinit var emailRow: TextView
+    private lateinit var hobbyRow: TextView
+    private lateinit var highScoreRow: TextView
+
+    private val gameLauncher = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        if (result.resultCode == RESULT_OK) {
+            val finalScore = result.data?.getIntExtra(CardGameActivity.EXTRA_FINAL_SCORE, 0) ?: 0
+            if (finalScore > Player.highScore) {
+                Player.highScore = finalScore
+            }
+        }
+        refresh()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
-            AffirmationsTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    AffirmationsApp()
-                }
+        setContentView(R.layout.activity_main)
+
+        if (Player.name.isEmpty()) {
+            Player.resetDefaults(
+                name = getString(R.string.default_name),
+                gender = getString(R.string.default_gender),
+                studentId = getString(R.string.default_student_id),
+                phone = getString(R.string.default_phone),
+                email = getString(R.string.default_email),
+                hobbies = setOf(getString(R.string.hobby_reading))
+            )
+        }
+
+        nameRow = findViewById(R.id.nameRow)
+        genderRow = findViewById(R.id.genderRow)
+        studentIdRow = findViewById(R.id.studentIdRow)
+        phoneRow = findViewById(R.id.phoneRow)
+        emailRow = findViewById(R.id.emailRow)
+        hobbyRow = findViewById(R.id.hobbyRow)
+        highScoreRow = findViewById(R.id.highScoreRow)
+
+        findViewById<android.widget.Button>(R.id.btnEditInfo).setOnClickListener {
+            startActivity(Intent(this, PersonInfoActivity::class.java))
+        }
+        findViewById<android.widget.Button>(R.id.btnPlayGame).setOnClickListener {
+            gameLauncher.launch(Intent(this, CardGameActivity::class.java))
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        refresh()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.menu_about -> {
+                showAboutDialog()
+                true
             }
+            else -> super.onOptionsItemSelected(item)
         }
     }
-}
 
-@Composable
-fun AffirmationsApp() {
-    AffirmationList(
-        affirmationList = Datasource().loadAffirmations(),
-    )
-}
-
-@Composable
-fun AffirmationList(affirmationList: List<Affirmation>, modifier: Modifier = Modifier) {
-    LazyColumn(modifier = modifier) {
-        items(affirmationList) { affirmation ->
-            AffirmationCard(
-                affirmation = affirmation,
-                modifier = Modifier.padding(8.dp)
-            )
-        }
+    private fun showAboutDialog() {
+        val message = getString(
+            R.string.about_message,
+            getString(R.string.app_name),
+            getString(R.string.default_name),
+            getString(R.string.default_student_id)
+        )
+        AlertDialog.Builder(this)
+            .setTitle(R.string.about_title)
+            .setMessage(message)
+            .setPositiveButton(android.R.string.ok, null)
+            .show()
     }
-}
 
-@Composable
-fun AffirmationCard(affirmation: Affirmation, modifier: Modifier = Modifier) {
-    Card(modifier = modifier) {
-        Column {
-            Image(
-                painter = painterResource(affirmation.imageResourceId),
-                contentDescription = stringResource(affirmation.stringResourceId),
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(194.dp),
-                contentScale = ContentScale.Crop
-            )
-            Text(
-                text = LocalContext.current.getString(affirmation.stringResourceId),
-                modifier = Modifier.padding(16.dp),
-                style = MaterialTheme.typography.headlineSmall
-            )
-        }
+    private fun refresh() {
+        nameRow.text = getString(R.string.row_name, Player.name)
+        genderRow.text = getString(R.string.row_gender, Player.gender)
+        studentIdRow.text = getString(R.string.row_student_id, Player.studentId)
+        phoneRow.text = getString(R.string.row_phone, Player.phone)
+        emailRow.text = getString(R.string.row_email, Player.email)
+        hobbyRow.text = getString(R.string.row_hobby, Player.hobbies.joinToString("、"))
+        highScoreRow.text = getString(R.string.row_high_score, Player.highScore)
     }
-}
-
-@Preview
-@Composable
-private fun AffirmationCardPreview() {
-    AffirmationCard(Affirmation(R.string.affirmation1, R.drawable.image1))
 }

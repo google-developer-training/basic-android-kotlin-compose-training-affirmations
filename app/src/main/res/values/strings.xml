@@ -1,28 +1,93 @@
-<!--
-  ~ Copyright (C) 2023 The Android Open Source Project
-  ~
-  ~ Licensed under the Apache License, Version 2.0 (the "License");
-  ~ you may not use this file except in compliance with the License.
-  ~ You may obtain a copy of the License at
-  ~
-  ~     https://www.apache.org/licenses/LICENSE-2.0
-  ~
-  ~ Unless required by applicable law or agreed to in writing, software
-  ~ distributed under the License is distributed on an "AS IS" BASIS,
-  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  ~ See the License for the specific language governing permissions and
-  ~ limitations under the License.
-  -->
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 默认语言：中文（实验二：UI控件代码生成 + MVC） -->
 <resources>
-    <string name="app_name">Affirmations</string>
-    <string name="affirmation1">I am strong.</string>
-    <string name="affirmation2">I believe in myself.</string>
-    <string name="affirmation3">Each day is a new opportunity to grow and be a better version of myself.</string>
-    <string name="affirmation4">Every challenge in my life is an opportunity to learn from.</string>
-    <string name="affirmation5">I have so much to be grateful for.</string>
-    <string name="affirmation6">Good things are always coming into my life.</string>
-    <string name="affirmation7">New opportunities await me at every turn.</string>
-    <string name="affirmation8">I have the courage to follow my heart.</string>
-    <string name="affirmation9">Things will unfold at precisely the right time.</string>
-    <string name="affirmation10">I will be present in all the moments that this day brings.</string>
+    <string name="app_name">乔于恬2024050133</string>
+
+    <!-- 区1：代码动态生成 TextView，ScrollView 嵌套 LinearLayout 滚动 -->
+    <string name="zone1_title">区1：动态添加记录（代码生成 TextView）</string>
+    <string name="btn_add">添加一条记录</string>
+    <string name="record_item">第%1$d条动态生成的记录</string>
+
+    <!-- 区2：MVC 模式的 ProgramAdviser（专业咨询） -->
+    <string name="zone2_title">区2：专业咨询 Program Adviser（MVC）</string>
+    <string name="adviser_hint">请输入专业名称，如：计算机、软件工程</string>
+    <string name="btn_query">查询专业建议</string>
+    <string name="result_hint">输入专业名称后，点击按钮获取咨询建议。</string>
+    <string name="advice_not_found">暂未收录“%1$s”专业的咨询建议，可尝试：计算机、软件工程、人工智能、数据科学、网络工程。</string>
+    <string name="advice_cs">计算机科学与技术：侧重算法、操作系统、计算机组成原理等基础，就业面广；建议多动手做项目，夯实数据结构与算法。</string>
+    <string name="advice_se">软件工程：侧重需求分析、软件设计、测试与项目管理；建议积累完整工程经验，熟悉主流框架与团队协作流程。</string>
+    <string name="advice_ai">人工智能：侧重机器学习、深度学习与数学基础；建议打好线性代数与概率论，多参加竞赛与开源项目。</string>
+    <string name="advice_ds">数据科学：侧重数据清洗、统计分析与可视化；建议掌握 SQL、Python 与业务理解，培养数据驱动思维。</string>
+    <string name="advice_net">网络工程：侧重计算机网络、路由交换与网络安全；建议多做实验，关注云网络与 DevOps 趋势。</string>
+
+    <!-- 实验三：多 Activity -->
+    <string name="main_title">实验三：多Activity</string>
+    <string name="btn_open_act1">1. 启动二级Activity（正向传参）</string>
+    <string name="btn_open_act2">2. 启动二级Activity（返回数据）</string>
+    <string name="btn_open_act3">3. 启动二级Activity（隐式调用相机）</string>
+    <string name="btn_open_act4">4. 启动二级Activity（StopWatch秒表）</string>
+    <string name="forward_payload">你好，我是来自MainActivity的数据：乔于恬（2024050133）通过Intent正向传递过来。</string>
+    <string name="back_result_label">二级Activity2返回的结果：%1$s</string>
+    <string name="back_result_empty">从二级Activity2返回的数据将显示在这里。</string>
+
+    <string name="act1_title">二级Activity 1：接收参数</string>
+    <string name="act1_received_label">已接收到MainActivity通过Intent传递过来的参数：\n\n%1$s</string>
+
+    <string name="act2_title">二级Activity 2：返回数据</string>
+    <string name="act2_hint">请输入要返回给MainActivity的内容</string>
+    <string name="act2_confirm">确定并返回</string>
+
+    <string name="act3_title">二级Activity 3：系统相机拍照</string>
+    <string name="act3_take_photo">启动相机拍照</string>
+    <string name="act3_no_camera">未找到可用的相机应用</string>
+
+    <string name="act4_title">二级Activity 4：StopWatch</string>
+    <string name="act4_start">开始</string>
+    <string name="act4_pause">暂停</string>
+    <string name="act4_reset">重置</string>
+    <string name="btn_back">返回MainActivity</string>
+
+    <!-- 实验四：翻牌游戏 -->
+    <string name="title_person_info">信息修改</string>
+    <string name="title_card_game">翻牌游戏</string>
+    <string name="label_avatar">头像</string>
+    <string name="label_gender">性别：</string>
+    <string name="label_hobby">爱好：</string>
+    <string name="row_name">姓名：%1$s</string>
+    <string name="row_gender">性别：%1$s</string>
+    <string name="row_student_id">学号：%1$s</string>
+    <string name="row_phone">电话：%1$s</string>
+    <string name="row_email">邮件地址：%1$s</string>
+    <string name="row_hobby">爱好：%1$s</string>
+    <string name="row_high_score">游戏最高分：%1$d</string>
+    <string name="btn_edit_info">修改个人信息</string>
+    <string name="btn_play_game">翻牌游戏</string>
+    <string name="hint_name">姓名</string>
+    <string name="hint_student_id">学号</string>
+    <string name="hint_phone">电话号码</string>
+    <string name="hint_email">电子邮件地址</string>
+    <string name="gender_male">男</string>
+    <string name="gender_female">女</string>
+    <string name="hobby_travel">旅游</string>
+    <string name="hobby_reading">阅读</string>
+    <string name="hobby_game">游戏</string>
+    <string name="hobby_shopping">购物</string>
+    <string name="btn_save">保存</string>
+    <string name="btn_cancel">取消</string>
+    <string name="game_score">得分：%1$d</string>
+    <string name="btn_reset">重置游戏</string>
+    <string name="btn_exit">退出</string>
+    <string name="card_back">?</string>
+    <string name="game_win">恭喜！全部配对完成！得分：%1$d</string>
+    <string name="default_name">乔于恬</string>
+    <string name="default_gender">女</string>
+    <string name="default_student_id">2024050133</string>
+    <string name="default_phone">13800000000</string>
+    <string name="default_email">qiaoyutian@example.com</string>
+
+    <!-- 实验五：菜单关于对话框 + RecyclerView 三张牌翻牌游戏 -->
+    <string name="menu_about">关于</string>
+    <string name="about_title">关于本应用</string>
+    <string name="about_message">应用名称：%1$s\n姓名：%2$s\n学号：%3$s\n\n三张牌匹配翻牌游戏：每次翻开3张牌，三张点数相同得高分，三张花色相同得低分，否则三张翻回重新选择。</string>
+    <string name="game_remaining">剩余：%1$d 张</string>
 </resources>
