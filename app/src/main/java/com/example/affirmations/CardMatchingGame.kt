@@ -1,16 +1,43 @@
 package com.example.affirmations
 
+import java.util.Random
+
 class CardMatchingGame(count: Int) {
     var score: Int = 0
         private set
 
     private val cards: MutableList<Card> = mutableListOf()
+    private val random = Random()
 
     init {
-        val deck = Deck()
-        repeat(count) {
-            deck.drawRandomCard()?.let { cards.add(it) }
+        setup(count)
+    }
+
+    private fun setup(count: Int) {
+        score = 0
+        cards.clear()
+
+        val ranks = Card.rankStrings.toMutableList().apply { shuffle(random) }
+        var dealt = 0
+        var group = 0
+        while (dealt + 3 <= count && group < ranks.size) {
+            val rank = ranks[group++]
+            val suits = Card.validSuits.toMutableList().apply { shuffle(random) }
+            repeat(3) { k -> cards.add(Card(suit = suits[k], rank = rank)) }
+            dealt += 3
         }
+
+        val deck = Deck()
+        while (dealt < count) {
+            deck.drawRandomCard()?.let { cards.add(it) }
+            dealt++
+        }
+
+        cards.shuffle(random)
+    }
+
+    fun reset(count: Int) {
+        setup(count)
     }
 
     fun cardAtIndex(index: Int): Card = cards[index]
@@ -26,20 +53,20 @@ class CardMatchingGame(count: Int) {
             card.isChosen = false
             return
         }
-        for (other in cards) {
-            if (other.isChosen && !other.isMatched) {
-                val matchScore = card.match(arrayOf(other))
-                if (matchScore > 0) {
-                    score += matchScore * MATCH_BONUS
-                    other.isMatched = true
-                    card.isMatched = true
-                } else {
-                    score -= MISMATCH_PENALTY
-                    other.isChosen = false
-                }
-                break
+
+        val chosen = cards.filter { it.isChosen && !it.isMatched }
+        if (chosen.size == 2) {
+            val matchScore = card.match(chosen.toTypedArray())
+            if (matchScore > 0) {
+                score += matchScore * MATCH_BONUS
+                card.isMatched = true
+                chosen.forEach { it.isMatched = true }
+            } else {
+                score -= MISMATCH_PENALTY
+                chosen.forEach { it.isChosen = false }
             }
         }
+
         score -= COST_TO_CHOOSE
         card.isChosen = true
     }

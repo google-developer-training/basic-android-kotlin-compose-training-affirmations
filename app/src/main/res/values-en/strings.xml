@@ -82,4 +82,10 @@
     <string name="default_student_id">2024050133</string>
     <string name="default_phone">13800000000</string>
     <string name="default_email">qiaoyutian@example.com</string>
+
+    <!-- Experiment 5: About menu + RecyclerView three-card game -->
+    <string name="menu_about">About</string>
+    <string name="about_title">About this app</string>
+    <string name="about_message">App: %1$s\nName: %2$s\nStudent ID: %3$s\n\nThree-card matching game: flip three cards; three same ranks score high, three same suits score low, otherwise they flip back.</string>
+    <string name="game_remaining">Remaining: %1$d</string>
 </resources>

@@ -64,4 +64,38 @@ class CardMatchingGameTest {
         }
         assertNull(deck.drawRandomCard())
     }
+
+    @Test
+    fun tripleRankMatchScoresNine() {
+        val a = Card("♥", "A")
+        val b = Card("♦", "A")
+        val c = Card("♠", "A")
+        assertEquals(9, a.match(arrayOf(b, c)))
+    }
+
+    @Test
+    fun tripleSuitMatchScoresThree() {
+        val a = Card("♥", "A")
+        val b = Card("♥", "K")
+        val c = Card("♥", "2")
+        assertEquals(3, a.match(arrayOf(b, c)))
+    }
+
+    @Test
+    fun tripleNoMatchScoresZero() {
+        val a = Card("♥", "A")
+        val b = Card("♦", "K")
+        val c = Card("♠", "2")
+        assertEquals(0, a.match(arrayOf(b, c)))
+    }
+
+    @Test
+    fun resetClearsScoreAndDealsNewDeck() {
+        val game = CardMatchingGame(24)
+        game.chooseCardAtIndex(0)
+        game.reset(12)
+        assertEquals(0, game.score)
+        assertEquals(12, game.cardCount)
+        assertFalse(game.cardAtIndex(0).isChosen)
+    }
 }

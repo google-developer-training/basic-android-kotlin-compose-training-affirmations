@@ -1,24 +1,26 @@
 package com.example.affirmations
 
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
+import android.view.ViewTreeObserver
 import android.widget.Button
-import android.widget.GridLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
-class CardGameActivity : AppCompatActivity() {
+class CardGameActivity : AppCompatActivity(), CardAdapter.OnCardClickedListener {
 
-    private lateinit var grid: GridLayout
+    private lateinit var recyclerView: RecyclerView
     private lateinit var scoreView: TextView
+    private lateinit var countView: TextView
     private lateinit var game: CardMatchingGame
-    private val buttons = mutableListOf<Button>()
+    private lateinit var adapter: CardAdapter
+    private var totalCards: Int = 0
 
     companion object {
         const val EXTRA_FINAL_SCORE = "extra_final_score"
-        private const val CARD_COUNT = 16
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,51 +28,47 @@ class CardGameActivity : AppCompatActivity() {
         setContentView(R.layout.activity_card_game)
         supportActionBar?.setTitle(R.string.title_card_game)
 
-        grid = findViewById(R.id.cardGrid)
+        totalCards = resources.getInteger(R.integer.card_count)
+        val spanCount = resources.getInteger(R.integer.column_count)
+
+        game = CardMatchingGame(totalCards)
+
+        recyclerView = findViewById(R.id.cardRecyclerView)
         scoreView = findViewById(R.id.scoreView)
+        countView = findViewById(R.id.countView)
+
+        recyclerView.layoutManager = GridLayoutManager(this, spanCount)
+        adapter = CardAdapter(game, this)
+        recyclerView.adapter = adapter
 
         findViewById<Button>(R.id.btnReset).setOnClickListener { startNewGame() }
         findViewById<Button>(R.id.btnExit).setOnClickListener { exitGame() }
 
-        startNewGame()
+        recyclerView.viewTreeObserver.addOnGlobalLayoutListener(
+            object : ViewTreeObserver.OnGlobalLayoutListener {
+                override fun onGlobalLayout() {
+                    recyclerView.viewTreeObserver.removeOnGlobalLayoutListener(this)
+                    val padding = recyclerView.paddingLeft + recyclerView.paddingRight
+                    adapter.cellSize = (recyclerView.width - padding) / spanCount
+                    adapter.notifyDataSetChanged()
+                }
+            }
+        )
+
+        updateView()
     }
 
     private fun startNewGame() {
-        game = CardMatchingGame(CARD_COUNT)
-        buttons.clear()
-        grid.removeAllViews()
-
-        val dm = resources.displayMetrics
-        val horizontalPad = dp(24)
-        val byWidth = (dm.widthPixels - horizontalPad) / 4
-        val bottomBar = dp(64)
-        val byHeight = (dm.heightPixels - bottomBar - dp(24)) / 4
-        val size = minOf(byWidth, byHeight)
-
-        for (i in 0 until CARD_COUNT) {
-            val btn = Button(this).apply {
-                setAllCaps(false)
-                textSize = 16f
-                setTextColor(Color.BLACK)
-                setOnClickListener { onCardClicked(i) }
-            }
-            val params = GridLayout.LayoutParams().apply {
-                width = size
-                height = size
-                columnSpec = GridLayout.spec(i % 4)
-                rowSpec = GridLayout.spec(i / 4)
-                setMargins(dp(4), dp(4), dp(4), dp(4))
-            }
-            grid.addView(btn, params)
-            buttons.add(btn)
-        }
+        game.reset(totalCards)
+        adapter.notifyDataSetChanged()
         updateView()
     }
 
-    private fun onCardClicked(index: Int) {
-        game.chooseCardAtIndex(index)
+    override fun onCardClicked(position: Int) {
+        game.chooseCardAtIndex(position)
+        adapter.notifyDataSetChanged()
         updateView()
-        if (game.matchedCount == CARD_COUNT) {
+        if (game.matchedCount == totalCards) {
             Toast.makeText(
                 this,
                 getString(R.string.game_win, game.score),
@@ -81,27 +79,8 @@ class CardGameActivity : AppCompatActivity() {
 
     private fun updateView() {
         scoreView.text = getString(R.string.game_score, game.score)
-        for (i in 0 until CARD_COUNT) {
-            val card = game.cardAtIndex(i)
-            val btn = buttons[i]
-            when {
-                card.isMatched -> {
-                    btn.setTextColor(Color.BLACK)
-                    btn.text = card.toString()
-                    btn.setBackgroundColor(Color.parseColor("#FFC8E6C9"))
-                    btn.isEnabled = false
-                }
-                card.isChosen -> {
-                    btn.setTextColor(Color.BLACK)
-                    btn.text = card.toString()
-                    btn.setBackgroundColor(Color.WHITE)
-                }
-                else -> {
-                    btn.text = ""
-                    btn.setBackgroundResource(R.drawable.card_poker)
-                }
-            }
-        }
+        val remaining = game.cardCount - game.matchedCount
+        countView.text = getString(R.string.game_remaining, remaining)
     }
 
     private fun exitGame() {
@@ -109,7 +88,4 @@ class CardGameActivity : AppCompatActivity() {
         setResult(RESULT_OK, data)
         finish()
     }
-
-    private fun dp(value: Int): Int =
-        (value * resources.displayMetrics.density).toInt()
 }

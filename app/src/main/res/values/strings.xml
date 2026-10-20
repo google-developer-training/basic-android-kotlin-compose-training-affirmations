@@ -84,4 +84,10 @@
     <string name="default_student_id">2024050133</string>
     <string name="default_phone">13800000000</string>
     <string name="default_email">qiaoyutian@example.com</string>
+
+    <!-- 实验五：菜单关于对话框 + RecyclerView 三张牌翻牌游戏 -->
+    <string name="menu_about">关于</string>
+    <string name="about_title">关于本应用</string>
+    <string name="about_message">应用名称：%1$s\n姓名：%2$s\n学号：%3$s\n\n三张牌匹配翻牌游戏：每次翻开3张牌，三张点数相同得高分，三张花色相同得低分，否则三张翻回重新选择。</string>
+    <string name="game_remaining">剩余：%1$d 张</string>
 </resources>

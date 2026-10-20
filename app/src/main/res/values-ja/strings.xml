@@ -82,4 +82,10 @@
     <string name="default_student_id">2024050133</string>
     <string name="default_phone">13800000000</string>
     <string name="default_email">qiaoyutian@example.com</string>
+
+    <!-- 実験5：概要メニュー + RecyclerView 3枚合わせゲーム -->
+    <string name="menu_about">概要</string>
+    <string name="about_title">このアプリについて</string>
+    <string name="about_message">アプリ：%1$s\n名前：%2$s\n学籍番号：%3$s\n\n3枚合わせゲーム：3枚めくり、同じ数字3枚で高得点、同じマーク3枚で低得点、不一致なら戻して再選択。</string>
+    <string name="game_remaining">残り：%1$d枚</string>
 </resources>
