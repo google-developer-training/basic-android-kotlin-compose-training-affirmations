@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <integer name="card_count">24</integer>
+    <!-- 实验六：两种翻牌玩法的牌数与列数 -->
+    <integer name="card_count_two">16</integer>
+    <integer name="card_count_three">24</integer>
     <integer name="column_count">4</integer>
 </resources>

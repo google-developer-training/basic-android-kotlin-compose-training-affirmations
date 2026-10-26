@@ -90,4 +90,20 @@
     <string name="about_title">关于本应用</string>
     <string name="about_message">应用名称：%1$s\n姓名：%2$s\n学号：%3$s\n\n三张牌匹配翻牌游戏：每次翻开3张牌，三张点数相同得高分，三张花色相同得低分，否则三张翻回重新选择。</string>
     <string name="game_remaining">剩余：%1$d 张</string>
+
+    <!-- 实验六：多Fragment应用（Fragment重构 + 对象序列化存储） -->
+    <string name="nav_person">个人信息</string>
+    <string name="nav_two_card">两张牌</string>
+    <string name="nav_three_card">三张牌</string>
+    <string name="title_person_fragment">个人信息</string>
+    <string name="title_two_card">两张牌翻牌游戏</string>
+    <string name="title_three_card">三张牌翻牌游戏</string>
+    <string name="info_section">当前信息（从序列化文件恢复）</string>
+    <string name="edit_section">编辑个人信息（保存后写入序列化文件）</string>
+    <string name="no_history">暂无历史信息，请编辑并保存。</string>
+    <string name="time_unknown">未知</string>
+    <string name="info_view">姓名：%1$s\n性别：%2$s\n学号：%3$s\n电话：%4$s\n邮箱：%5$s\n爱好：%6$s\n上次保存：%7$s\n两张牌最高分：%8$d\n三张牌最高分：%9$d</string>
+    <string name="game_history_text">历史最佳：%1$d 分　共 %2$d 局　最近：%3$d 分</string>
+    <string name="game_history_empty">历史最佳：—　共 0 局</string>
+    <string name="saved_ok">已保存到序列化文件 player.dat</string>
 </resources>
