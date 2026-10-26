@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 日本語 -->
+<resources>
+    <string name="app_name">QiaoYutian2024050133</string>
+
+    <string name="zone1_title">ゾーン1：レコードを動的に追加（コードで TextView 生成）</string>
+    <string name="btn_add">レコードを追加</string>
+    <string name="record_item">コードで生成した第%1$d件目のレコード</string>
+
+    <string name="zone2_title">ゾーン2：プログラムアドバイザー（MVC）</string>
+    <string name="adviser_hint">専攻を入力してください（例：コンピュータ科学）</string>
+    <string name="btn_query">アドバイスを検索</string>
+    <string name="result_hint">専攻を入力してボタンを押すとアドバイスが表示されます。</string>
+    <string name="advice_not_found">「%1$s」に関するアドバイスは未収録です。例：コンピュータ科学、ソフトウェア工学、AI、データ科学、ネットワーク。</string>
+    <string name="advice_cs">コンピュータ科学：アルゴリズム・OS・計算機原理が中心。データ構造を強化し、作品を作りましょう。</string>
+    <string name="advice_se">ソフトウェア工学：要件定義・設計・テスト・プロジェクト管理が中心。実際の開発経験を積みましょう。</string>
+    <string name="advice_ai">人工知能：機械学習・深層学習と数学が中心。線形代数と確率統計を固め、コンペに参加しましょう。</string>
+    <string name="advice_ds">データ科学：クレンジング・統計分析・可視化が中心。SQL と Python を習得しましょう。</string>
+    <string name="advice_net">ネットワーク工学：ネットワーク・ルーティング・セキュリティが中心。実験を重ね、クラウド動向を追いましょう。</string>
+
+    <!-- 実験3：マルチActivity -->
+    <string name="main_title">実験3：マルチActivity</string>
+    <string name="btn_open_act1">1. サブActivityを起動（値渡し）</string>
+    <string name="btn_open_act2">2. サブActivityを起動（結果返却）</string>
+    <string name="btn_open_act3">3. サブActivityを起動（暗黙インテントでカメラ）</string>
+    <string name="btn_open_act4">4. サブActivityを起動（ストップウォッチ）</string>
+    <string name="forward_payload">こんにちは。MainActivityからIntentで正向きに渡されたデータです：喬于恬（2024050133）。</string>
+    <string name="back_result_label">サブActivity2から返ってきた結果：%1$s</string>
+    <string name="back_result_empty">サブActivity2から返されたデータはここに表示されます。</string>
+
+    <string name="act1_title">サブActivity 1：値を受信</string>
+    <string name="act1_received_label">MainActivityからIntentで受け取ったパラメータ：\n\n%1$s</string>
+
+    <string name="act2_title">サブActivity 2：結果を返す</string>
+    <string name="act2_hint">MainActivityへ返す内容を入力してください</string>
+    <string name="act2_confirm">確定して戻る</string>
+
+    <string name="act3_title">サブActivity 3：システムカメラ</string>
+    <string name="act3_take_photo">カメラで撮影</string>
+    <string name="act3_no_camera">利用可能なカメラアプリが見つかりません</string>
+
+    <string name="act4_title">サブActivity 4：ストップウォッチ</string>
+    <string name="act4_start">スタート</string>
+    <string name="act4_pause">一時停止</string>
+    <string name="act4_reset">リセット</string>
+    <string name="btn_back">MainActivityへ戻る</string>
+
+    <!-- 実験4：カード合わせゲーム -->
+    <string name="title_person_info">プロフィール編集</string>
+    <string name="title_card_game">カードゲーム</string>
+    <string name="label_avatar">アバター</string>
+    <string name="label_gender">性別：</string>
+    <string name="label_hobby">趣味：</string>
+    <string name="row_name">名前：%1$s</string>
+    <string name="row_gender">性別：%1$s</string>
+    <string name="row_student_id">学籍番号：%1$s</string>
+    <string name="row_phone">電話：%1$s</string>
+    <string name="row_email">メール：%1$s</string>
+    <string name="row_hobby">趣味：%1$s</string>
+    <string name="row_high_score">ハイスコア：%1$d</string>
+    <string name="btn_edit_info">プロフィール編集</string>
+    <string name="btn_play_game">カードゲーム</string>
+    <string name="hint_name">名前</string>
+    <string name="hint_student_id">学籍番号</string>
+    <string name="hint_phone">電話番号</string>
+    <string name="hint_email">メールアドレス</string>
+    <string name="gender_male">男</string>
+    <string name="gender_female">女</string>
+    <string name="hobby_travel">旅行</string>
+    <string name="hobby_reading">読書</string>
+    <string name="hobby_game">ゲーム</string>
+    <string name="hobby_shopping">ショッピング</string>
+    <string name="btn_save">保存</string>
+    <string name="btn_cancel">キャンセル</string>
+    <string name="game_score">スコア：%1$d</string>
+    <string name="btn_reset">リスタート</string>
+    <string name="btn_exit">終了</string>
+    <string name="card_back">?</string>
+    <string name="game_win">おめでとうございます！全て一致！スコア：%1$d</string>
+    <string name="default_name">喬于恬</string>
+    <string name="default_gender">女</string>
+    <string name="default_student_id">2024050133</string>
+    <string name="default_phone">13800000000</string>
+    <string name="default_email">qiaoyutian@example.com</string>
+
+    <!-- 実験5：概要メニュー + RecyclerView 3枚合わせゲーム -->
+    <string name="menu_about">概要</string>
+    <string name="about_title">このアプリについて</string>
+    <string name="about_message">アプリ：%1$s\n名前：%2$s\n学籍番号：%3$s\n\n3枚合わせゲーム：3枚めくり、同じ数字3枚で高得点、同じマーク3枚で低得点、不一致なら戻して再選択。</string>
+    <string name="game_remaining">残り：%1$d枚</string>
+</resources>
