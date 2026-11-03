@@ -1,5 +1,6 @@
 package com.example.affirmations
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -33,6 +34,10 @@ class MainActivity : AppCompatActivity() {
                     R.id.nav_person -> switchTo(PersonInfoFragment())
                     R.id.nav_two_card -> switchTo(TwoCardGameFragment())
                     R.id.nav_three_card -> switchTo(ThreeCardGameFragment())
+                    R.id.nav_music -> {
+                        startActivity(Intent(this, MusicActivity::class.java))
+                        return@setOnItemSelectedListener false
+                    }
                     else -> return@setOnItemSelectedListener false
                 }
                 true
