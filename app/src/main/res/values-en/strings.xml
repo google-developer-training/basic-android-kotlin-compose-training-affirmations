@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- English -->
+<resources>
+    <string name="app_name">QiaoYutian2024050133</string>
+
+    <string name="zone1_title">Zone 1: Dynamically Add Records (code-generated TextView)</string>
+    <string name="btn_add">Add a record</string>
+    <string name="record_item">Record #%1$d generated in code</string>
+
+    <string name="zone2_title">Zone 2: Program Adviser (MVC)</string>
+    <string name="adviser_hint">Enter a major, e.g. Computer Science</string>
+    <string name="btn_query">Query advice</string>
+    <string name="result_hint">Enter a major and tap the button to get advice.</string>
+    <string name="advice_not_found">No advice found for "%1$s". Try: Computer Science, Software Engineering, AI, Data Science, Networking.</string>
+    <string name="advice_cs">Computer Science: focuses on algorithms, operating systems and computer organization; build strong data structures &amp; algorithms and ship side projects.</string>
+    <string name="advice_se">Software Engineering: focuses on requirements, design, testing and project management; gain end-to-end engineering experience with mainstream frameworks.</string>
+    <string name="advice_ai">Artificial Intelligence: focuses on ML, deep learning and math; strengthen linear algebra &amp; probability and join competitions and open-source projects.</string>
+    <string name="advice_ds">Data Science: focuses on cleaning, statistical analysis and visualization; master SQL, Python and business sense, think data-driven.</string>
+    <string name="advice_net">Network Engineering: focuses on networking, routing/switching and security; do hands-on labs and follow cloud networking &amp; DevOps trends.</string>
+
+    <!-- Experiment 3: Multiple Activities -->
+    <string name="main_title">Experiment 3: Multiple Activities</string>
+    <string name="btn_open_act1">1. Open Sub-Activity (forward extras)</string>
+    <string name="btn_open_act2">2. Open Sub-Activity (return result)</string>
+    <string name="btn_open_act3">3. Open Sub-Activity (implicit camera)</string>
+    <string name="btn_open_act4">4. Open Sub-Activity (StopWatch)</string>
+    <string name="forward_payload">Hi, I am data sent from MainActivity: QiaoYutian (2024050133) passed forward via Intent.</string>
+    <string name="back_result_label">Result returned from Sub-Activity 2: %1$s</string>
+    <string name="back_result_empty">Data returned from Sub-Activity 2 will appear here.</string>
+
+    <string name="act1_title">Sub-Activity 1: Receive Extras</string>
+    <string name="act1_received_label">Received from MainActivity via Intent:\n\n%1$s</string>
+
+    <string name="act2_title">Sub-Activity 2: Return Result</string>
+    <string name="act2_hint">Type content to send back to MainActivity</string>
+    <string name="act2_confirm">Confirm &amp; return</string>
+
+    <string name="act3_title">Sub-Activity 3: System Camera</string>
+    <string name="act3_take_photo">Take a photo</string>
+    <string name="act3_no_camera">No camera app available</string>
+
+    <string name="act4_title">Sub-Activity 4: StopWatch</string>
+    <string name="act4_start">Start</string>
+    <string name="act4_pause">Pause</string>
+    <string name="act4_reset">Reset</string>
+    <string name="btn_back">Back to MainActivity</string>
+
+    <!-- Experiment 4: Card Matching Game -->
+    <string name="title_person_info">Edit Profile</string>
+    <string name="title_card_game">Card Game</string>
+    <string name="label_avatar">Avatar</string>
+    <string name="label_gender">Gender: </string>
+    <string name="label_hobby">Hobbies: </string>
+    <string name="row_name">Name: %1$s</string>
+    <string name="row_gender">Gender: %1$s</string>
+    <string name="row_student_id">Student ID: %1$s</string>
+    <string name="row_phone">Phone: %1$s</string>
+    <string name="row_email">Email: %1$s</string>
+    <string name="row_hobby">Hobbies: %1$s</string>
+    <string name="row_high_score">High Score: %1$d</string>
+    <string name="btn_edit_info">Edit Profile</string>
+    <string name="btn_play_game">Card Game</string>
+    <string name="hint_name">Name</string>
+    <string name="hint_student_id">Student ID</string>
+    <string name="hint_phone">Phone number</string>
+    <string name="hint_email">Email address</string>
+    <string name="gender_male">Male</string>
+    <string name="gender_female">Female</string>
+    <string name="hobby_travel">Travel</string>
+    <string name="hobby_reading">Reading</string>
+    <string name="hobby_game">Gaming</string>
+    <string name="hobby_shopping">Shopping</string>
+    <string name="btn_save">Save</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="game_score">Score: %1$d</string>
+    <string name="btn_reset">Restart</string>
+    <string name="btn_exit">Exit</string>
+    <string name="card_back">?</string>
+    <string name="game_win">Congratulations! All matched! Score: %1$d</string>
+    <string name="default_name">Qiao Yutian</string>
+    <string name="default_gender">Female</string>
+    <string name="default_student_id">2024050133</string>
+    <string name="default_phone">13800000000</string>
+    <string name="default_email">qiaoyutian@example.com</string>
+
+    <!-- Experiment 5: About menu + RecyclerView three-card game -->
+    <string name="menu_about">About</string>
+    <string name="about_title">About this app</string>
+    <string name="about_message">App: %1$s\nName: %2$s\nStudent ID: %3$s\n\nThree-card matching game: flip three cards; three same ranks score high, three same suits score low, otherwise they flip back.</string>
+    <string name="game_remaining">Remaining: %1$d</string>
+</resources>
