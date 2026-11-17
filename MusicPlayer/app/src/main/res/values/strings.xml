@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">乔于恬2024050133</string>
+
+    <string name="now_playing">正在播放</string>
+    <string name="paused">已暂停</string>
+    <string name="stopped">未在播放</string>
+    <string name="unknown_song">未选择歌曲</string>
+    <string name="unknown_artist">未知艺术家</string>
+
+    <string name="song_list_title">音乐列表</string>
+    <string name="refresh">刷新</string>
+    <string name="play">播放</string>
+    <string name="pause">暂停</string>
+    <string name="stop">停止</string>
+    <string name="previous">上一首</string>
+    <string name="next">下一首</string>
+
+    <string name="empty_songs">暂未找到音乐文件\n请把音乐放入手机存储后点击“刷新”</string>
+    <string name="empty_songs_permission">需要授予音频读取权限才能扫描本地音乐</string>
+    <string name="no_song_selected">请先在列表中选择一首歌曲</string>
+    <string name="playing_now_label">播放中</string>
+    <string name="paused_label">已暂停</string>
+
+    <string name="notification_channel_name">音乐播放</string>
+    <string name="notification_channel_description">显示当前播放的歌曲</string>
+</resources>
