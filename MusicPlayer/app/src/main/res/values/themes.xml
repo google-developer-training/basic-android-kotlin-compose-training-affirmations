@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.MusicPlayer" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/brand_primary</item>
+        <item name="colorPrimaryVariant">@color/brand_primary_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/brand_accent</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:colorBackground">@color/page_background</item>
+        <item name="android:windowBackground">@color/page_background</item>
+        <item name="android:statusBarColor">@color/page_background</item>
+        <item name="android:navigationBarColor">@color/page_background</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+    </style>
+</resources>

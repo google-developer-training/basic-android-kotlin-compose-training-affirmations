@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 自定义启动图标前景：白色对话气泡 + 蓝色字母 H（Hello World） -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- 白色对话气泡 -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M27,33 h54 a16,16 0 0 1 16,16 v4 a16,16 0 0 1 -16,16 h-26 l-10,13 l4,-13 h-22 a16,16 0 0 1 -16,-16 v-4 a16,16 0 0 1 16,-16 z" />
+    <!-- 气泡内的蓝色字母 H -->
+    <path
+        android:fillColor="#0D47A1"
+        android:pathData="M41,42 h5 v18 h-5 z M62,42 h5 v18 h-5 z M41,49 h26 v4 h-26 z" />
+</vector>
